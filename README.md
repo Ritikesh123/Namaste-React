@@ -21,3 +21,20 @@
 - Diffrent dev and prod bundles
 
  
+
+ #Namaste_Food component
+
+ // Header
+// - logo
+// - nav items
+// body
+// - search
+// - RestaurantContainer
+//   - RestaurantCard
+//     - Image
+//     - Name of res, rating, cuisine, delivery time
+// footer
+// - copyright
+// - link
+// - address
+// - contact

@@ -1,22 +1,24 @@
 {
-  "name": "react-code",
+  "name": "namaste-react",
   "version": "1.0.0",
-  "description": "This is react-code by Ritikesh Raj",
+  "description": "This is Namaste-React by Ritikesh Raj",
   
   "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ritikesh123/REACT-CODE.git"
+    "url": "git+https://github.com/Ritikesh123/namaste-react.git"
   },
   "keywords": [],
-  "author": "Ritikesh",
+  "author": "Ritikesh Raj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ritikesh123/REACT-CODE/issues"
+    "url": "https://github.com/Ritikesh123/namaste-react/issues"
   },
-  "homepage": "https://github.com/Ritikesh123/REACT-CODE#readme",
+  "homepage": "https://github.com/Ritikesh123/namaste-react#readme",
   "devDependencies": {
     "parcel": "^2.9.2",
     "process": "^0.11.10"
@@ -24,8 +26,5 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "browerslist": ["last 2  version"
-              ]
-
+  }
 }
