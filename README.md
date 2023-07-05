@@ -38,3 +38,18 @@
 // - link
 // - address
 // - contact
+
+
+<!-- Two types of Export/Import -->
+<!-- 1. Default Export/Import
+        - export default component;
+        - import component from "path";
+
+     2. Named Export/Import
+        - export const components;
+        - import {component} from "path";
+ -->
+
+ <!-- There are two types of Routing in web pages -->
+ <!-- 1. client side routing -->
+ <!-- 2. server side routing -->
