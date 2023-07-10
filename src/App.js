@@ -52,11 +52,10 @@ const appRouter= createBrowserRouter([
                         <Grocery />
                     </Suspense>
                 ),
-                
             },
 
             {
-                path:"/restaurant/:resId",
+                path:"/restaurants/:resId",
                 element: <RestaurantMenu />,
             },
             
