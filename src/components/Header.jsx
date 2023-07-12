@@ -1,7 +1,7 @@
-import { LOGO_URL } from "../utils/constants.js"
+import { LOGO_URL } from "../utils/constants.jsx"
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus.js";
+import useOnlineStatus from "../utils/useOnlineStatus.jsx";
 
 
 const Header= () => {
