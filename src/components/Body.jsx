@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import './swiggy.json'
+import swiggy from "./swiggy.json"
 
+// header("Acess-Control-Allow-Origin: http://localhost:1234/, https://food-delivery234.netlify.app/");
+// header("Acess-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+// header("Acess-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization");
 
-header("Acess-Control-Allow-Origin: http://localhost:1234/, https://food-delivery234.netlify.app/");
-header("Acess-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
-header("Acess-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization");
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -25,11 +27,13 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5952314&lng=85.08308040000001&page_type=DESKTOP_WEB_LISTING"
-    );
+    // const data = await fetch(
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5952314&lng=85.08308040000001&page_type=DESKTOP_WEB_LISTING"
+    // );
 
-    const json = await data.json();
+    // const data = await fetch(swiggy);
+    const json = swiggy;
+    console.log(json);
 
     // Optional Chaining
     setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
