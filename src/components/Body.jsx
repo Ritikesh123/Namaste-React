@@ -1,8 +1,13 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
+
+header("Acess-Control-Allow-Origin: http://localhost:1234/, https://food-delivery234.netlify.app/");
+header("Acess-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+header("Acess-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization");
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -10,9 +15,10 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+  const ResturantCardPromted = withPromotedLabel(RestaurantCard);
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
-  console.log("Body Rendered");
+  console.log("Body Rendered", listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -20,7 +26,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5690788&lng=85.0978351&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5952314&lng=85.08308040000001&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -90,12 +96,30 @@ const Body = () => {
             key={restaurant.data.id}
             to={"/restaurants/" + restaurant.data.id}
           >
+
+          {restaurant.data.promoted ? (
+            <ResturantCardPromted resData={restaurant}/>
+           ) : (
             <RestaurantCard resData={restaurant} />
+          )}
+          
           </Link>
         ))}
       </div>
     </div>
   );
+};
+
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return () => {
+    return(
+      <div>
+        <label>Promoted</label>
+        <RestaurantCard />
+      </div>
+    );
+  };
 };
 
 export default Body;
