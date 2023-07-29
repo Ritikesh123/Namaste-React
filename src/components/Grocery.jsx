@@ -1,6 +1,11 @@
-const Grocery=()=>{
-    return(
-        <h1>We have grocery store in our local area</h1>
+const Grocery = () => {
+    return (
+      <h1>
+        {" "}
+        Our grocery online store, and we have a lot of child components inside
+        this web page!!!
+      </h1>
     );
-};
-export default Grocery;
+  };
+  
+  export default Grocery;

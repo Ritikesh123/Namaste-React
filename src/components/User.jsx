@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const User=({name})=>{
-    const [count] = useState(0);
-    const [count2]=useState(1);
+const User = ({ name }) => {
+  const [count, setCount] = useState(0);
+  const [count2] = useState(1);
 
-    useEffect(()=>{
-        // API Calls
-        }, []);
-    return(
-        <div className="user-card">
-            <h2>Count = {count}</h2>
-            <h3>Location : Patna</h3>
-            <h4>email : ritikesh.raj04@gmail.com</h4>
+  useEffect(() => {
+    // Api Calls
+  }, []);
 
-
-        </div>
-    )
-}
+  return (
+    <div className="user-card m-4 p-4 bg-gray-50 rounded-lg">
+      <h1>Count = {count}</h1>
+      <h1>Count2 = {count2}</h1>
+      <h2>Name: {name}</h2>
+      <h3>Location: Dehradun</h3>
+      <h4>Contact: ritikesh.raj04@gmail.com</h4>
+    </div>
+  );
+};
 
 export default User;

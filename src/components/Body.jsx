@@ -20,7 +20,7 @@ const Body = () => {
   const ResturantCardPromted = withPromotedLabel(RestaurantCard);
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
-  console.log("Body Rendered", listOfRestaurants);
+  // console.log("Body Rendered", listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -33,7 +33,7 @@ const Body = () => {
 
     // const data = await fetch(swiggy);
     const json = swiggy;
-    console.log(json);
+    // console.log(json);
 
     // Optional Chaining
     setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
@@ -57,7 +57,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box border border-solid border-black"
+            className="search-box px-4 py-1.5 m-4 bg-green-200 rounded-lg"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -67,7 +67,7 @@ const Body = () => {
             onClick={() => {
               // Filter the restraunt cards and update the UI
               // searchText
-              console.log(searchText);
+              // console.log(searchText);
 
               const filteredRestaurant = listOfRestaurants.filter((res) =>
                 res.data.name.toLowerCase().includes(searchText.toLowerCase())
@@ -92,7 +92,10 @@ const Body = () => {
           Top Rated Restaurants
         </button>
         </div>
-        
+        <div className="m-4 p-4 flex items-center">
+          <label className="px-2">UserName : </label>
+          <input className="filter-btn px-4 py-1.5 bg-green-200 rounded-lg"/>
+        </div>
       </div>
       <div className="res-container flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (

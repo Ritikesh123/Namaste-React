@@ -53,3 +53,11 @@
  <!-- There are two types of Routing in web pages -->
  <!-- 1. client side routing -->
  <!-- 2. server side routing -->
+
+ # Redux ToolKit
+ - install @reduxjs/toolkit and react-redux
+ - Build our store
+ - Connect to our build store to the app
+ - Build a Slice(cartSlice)
+ - dispatch an action
+ - selector

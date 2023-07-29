@@ -1,7 +1,9 @@
 import { LOGO_URL } from "../utils/constants.jsx"
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.jsx";
+import UserContext from "../utils/UserContext.jsx";
+import { useSelector } from "react-redux";
 
 
 
@@ -9,6 +11,12 @@ const Header= () => {
     const [btnButtonReact, setBtnButtonReact]= useState("login");
 
     const onlineStatus= useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext);
+    console.log(loggedInUser)
+
+    // Subscribing to the store using selector
+    const cartItems = useSelector((store) => store.cart.items)
 
     return(
 
@@ -36,17 +44,22 @@ const Header= () => {
                     <Link to="/grocery">Grocery</Link>
                 </li>
                 
-                <li className="px-4">
-                    <Link to="/Cart">Cart</Link>
+                <li className="px-4 font-bold bg-gradient-to-b to
+                hover:bg-fuchsia-600 rounded-lg duration-200">
+                    <Link to="/cart">Cart ({cartItems.length} items)</Link>
                 </li>
-                <button className="login" onClick={()=>{
-                   btnButtonReact=== "login" 
-                   ? setBtnButtonReact("logout") 
-                   : setBtnButtonReact("login")
-                }}
-                >
+                   <button 
+                    className="login" onClick={()=>{
+                    btnButtonReact=== "login" 
+                    ? setBtnButtonReact("logout") 
+                    : setBtnButtonReact("login")
+                   }}
+                 >
                     {btnButtonReact}
                 </button>
+
+                <li className="px-4 font-bold">{loggedInUser}</li>
+
             </ul>
             
             </div>
