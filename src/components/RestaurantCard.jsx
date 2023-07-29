@@ -12,7 +12,7 @@ const RestaurantCard= (props) => {
         name, cuisines,
         avgRating, costForTwoString,
         deliveryTime
-        } = resData?.data
+        } = resData;
 
         // console.log(cloudinaryImageId);
     return (
