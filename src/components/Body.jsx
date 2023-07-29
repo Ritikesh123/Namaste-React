@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import swiggy from "./swiggy.json"
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -21,11 +22,12 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5952314&lng=85.08308040000001&page_type=DESKTOP_WEB_LISTING"
-    );
+    // const data = await fetch(
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5952314&lng=85.08308040000001&page_type=DESKTOP_WEB_LISTING"
+    // );
+    const data = await fetch(swiggy);
 
-    const json = await data.json();
+    const json = swiggy();
 
     // Optional Chaining
     setListOfRestraunt(
